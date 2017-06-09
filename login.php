@@ -11,7 +11,7 @@ if(isset($_SESSION['id']))
 
 if(isset($_POST['submit']))
 {
- $email = $_POST['email'];
+ $email = mysql_real_escape_string($_POST['email']);
  $password = md5($_POST['password']);
    
 
