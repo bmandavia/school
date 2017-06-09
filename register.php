@@ -10,18 +10,18 @@ if(isset($_POST['submit']) && !empty($_POST['submit'] ))
 {
 
 
-  $name = $_POST['name'];
-  $address = $_POST['address'];
-  $email = $_POST['email'];
-  $city = $_POST['city'];
+  $name = mysql_real_escape_string($_POST['name']);
+  $address = mysql_real_escape_string($_POST['address']);
+  $email = mysql_real_escape_string($_POST['email']);
+  $city = mysql_real_escape_string($_POST['city']);
   $password = md5($_POST['password']);
-  $repassword = $_POST['repassword'];
-  $birthmonth = $_POST['birthmonth'];
-  $birthday = $_POST['birthday'];
-  $birthyear = $_POST['birthyear'];
-  $gender = $_POST['gender'];
-  $identity = $_POST['identity'];
-  $phone = $_POST['phone'];
+  $repassword = mysql_real_escape_string($_POST['repassword']);
+  $birthmonth = mysql_real_escape_string($_POST['birthmonth']);
+  $birthday = mysql_real_escape_string($_POST['birthday']);
+  $birthyear = mysql_real_escape_string($_POST['birthyear']);
+  $gender = mysql_real_escape_string($_POST['gender']);
+  $identity = mysql_real_escape_string($_POST['identity']);
+  $phone = mysql_real_escape_string($_POST['phone']);
   $dateOfBirth = $birthday."-". $birthmonth."-".$birthyear;
   
 $select = mysql_query("select email from user_registration where email='$email'");
